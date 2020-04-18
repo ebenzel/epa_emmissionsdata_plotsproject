@@ -13,8 +13,7 @@ totals <- NEI %>%
 
 plot(totals, ylab = "total PM2.5 emissions (million tons)", pch = 19)
 with(totals, text(year,total-.25, labels = year))
-axis(1, at = c(1999,2002,2005,2008))
-axis(2, at = 1:9)
+
 # create plot
 dev.copy(png,"plot1.png")
 dev.off()
