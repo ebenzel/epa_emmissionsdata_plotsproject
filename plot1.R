@@ -11,8 +11,7 @@ totals <- NEI %>%
         group_by(year) %>%
         summarize(total = sum(Emissions)/10^6)
 
-plot(totals, ylab = "total PM2.5 emissions (million tons)", pch = 19)
-with(totals, text(year,total-.25, labels = year))
+barplot(totals$total, names.arg = totals$year, ylab = "total PM2.5 emissions (million tons)", pch = 19)
 
 # create plot
 dev.copy(png,"plot1.png")

@@ -10,8 +10,10 @@ baltimore.totals <- NEI %>%
         group_by(year) %>%
         summarize(total = sum(Emissions))
 
-plot(baltimore.totals, ylab = "total PM2.5 emissions (tons)", main = "pm2.5 Emmissions in Baltimore City, MD", pch = 19)
-with(baltimore.totals, text(year,total-100, labels = year))
+barplot(baltimore.totals$total, names.arg = baltimore.totals$year, 
+        ylab = "total PM2.5 emissions (tons)", 
+        main = "pm2.5 Emmissions in Baltimore City, MD", 
+        pch = 19)
 
 # create plot
 dev.copy(png,"plot2.png")

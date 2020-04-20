@@ -16,8 +16,8 @@ coal.totals <- NEI %>%
         summarize(total = sum(Emissions))
 
 coal.totals %>%
-        ggplot(aes(year, total))+
-        geom_point(size = 2) +
+        ggplot(aes(as.factor(year),total))+
+        geom_col() +
         labs(x = "Year", y = "PM2.5 Emmission (tons)", title = "Coal Combustion Related PM2.5 Emissions")
 
 # create plot
